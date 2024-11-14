@@ -67,17 +67,7 @@ bot.on('message', (msg) => {
                 }
 
                 // Send the output in mono font block (code block) for easy copying
-                bot.sendMessage(chatId, `\`\`\`${processedString}\`\`\``, {
-                    parse_mode: 'Markdown',
-                    reply_markup: {
-                        inline_keyboard: [
-                            [{
-                                text: 'Copy',
-                                callback_data: 'copy_output',
-                            }]
-                        ]
-                    }
-                });
+                bot.sendMessage(chatId, `\`\`\`${processedString}\`\`\``, { parse_mode: 'Markdown' });
             } else {
                 bot.sendMessage(chatId, 'Invalid URL format: Missing tgWebAppData, query, or user.');
             }
